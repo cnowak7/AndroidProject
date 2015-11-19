@@ -5,13 +5,31 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
+
+    private Button startQuiz;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //TEST
+
+        startQuiz = (Button) findViewById(R.id.buttonStart);
+
+        final View.OnClickListener listener = new View.OnClickListener() {
+            public void onClick(View v) {
+                String btnValue = ((Button) v).getText().toString();
+
+                Intent intent = new Intent(MainActivity.this, QuizListActivity.class);
+                startActivity(intent);
+
+
+            }
+        };
+        startQuiz.setOnClickListener(listener);
+
+
+
     }
 
 
