@@ -3,4 +3,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="facebook_app_id">1654107081541612</string>
+    <string name="chooseAQuiz">CHOOSE A QUIZ</string>
+    <string name="highScores">VIEW HIGH SCORES</string>
+    <string name="settings">SETTINGS</string>
+    <string name="title_activity_settings">SettingsActivity</string>
 </resources>
