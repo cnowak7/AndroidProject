@@ -24,7 +24,7 @@ import com.facebook.login.widget.LoginButton;
  */
 public class MainActivityFragment extends Fragment {
 
-    private TextView mTextDetails;
+//    private TextView mTextDetails;
     private CallbackManager mCallbackManager;
 
     private AccessTokenTracker mTokenTracker;
@@ -35,7 +35,7 @@ public class MainActivityFragment extends Fragment {
             AccessToken accessToken = loginResult.getAccessToken();
             Profile profile = Profile.getCurrentProfile();
             if (profile != null) {
-                mTextDetails.setText("Welcome " + profile.getName());
+//                mTextDetails.setText("Welcome " + profile.getName());
             }
         }
 
@@ -66,7 +66,7 @@ public class MainActivityFragment extends Fragment {
         mProfileTracker = new ProfileTracker() {
             @Override
             protected void onCurrentProfileChanged(Profile oldProfile, Profile newProfile) {
-                mTextDetails.setText("Welcome " + newProfile.getName());
+//                mTextDetails.setText("Welcome " + newProfile.getName());
             }
         };
         mTokenTracker.startTracking();
@@ -83,7 +83,7 @@ public class MainActivityFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         LoginButton loginButton = (LoginButton)view.findViewById(R.id.login_button);
-        this.mTextDetails = (TextView)view.findViewById(R.id.textDetails);
+//        this.mTextDetails = (TextView)view.findViewById(R.id.textDetails);
         loginButton.setReadPermissions("user_friends");
         loginButton.setFragment(this);
         loginButton.registerCallback(mCallbackManager, mCallback);
