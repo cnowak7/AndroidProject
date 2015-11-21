@@ -1,9 +1,11 @@
 package com.example.cnowak_rperez.randomknowledgequiz;
 
+import java.io.Serializable;
+
 /**
  * Created by Rafael on 11/18/2015.
  */
-public class Quiz {
+public class Quiz implements Serializable{
     String name;
     String description;
     Question questions[] = new Question[10];
