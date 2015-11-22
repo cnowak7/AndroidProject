@@ -33,6 +33,7 @@ public class QuizActivity extends Activity {
     private ProgressBar progressBar;
     private Handler mHandler;
     private CountDownTimer timer;
+    private Boolean feedback = true;
 
     private Quiz quiz;
     private Question question;
@@ -255,24 +256,10 @@ public class QuizActivity extends Activity {
             c3.setText(array[2]);
             c4.setText(array[3]);
 
-            //TextView name = (TextView) findViewById(R.id.q);
-            //TextView description = (TextView) findViewById(R.id.questionDescription);
-            /*ImageView icon = (ImageView) findViewById(R.id.imageDetail);
-            ImageView image = (ImageView) findViewById(R.id.consoleImage);
-            TextView year = (TextView) findViewById(R.id.nameYear);
-            TextView gen = (TextView) findViewById(R.id.genMain);
-            TextView link = (TextView) findViewById(R.id.link);*/
-            //name.setText(intent.getCharSequenceExtra("Name"));
-            //description.setText(
-                //    intent.getCharSequenceExtra("Description"));
-            /*icon.setImageResource(intent.getIntExtra("Icon", -1));
-            image.setImageResource(intent.getIntExtra("Image", -1));
-            year.setText(intent.getCharSequenceExtra("Year"));
-            //gen.setText(intent.getCharSequenceExtra("Generation"));
-            link.setText(intent.getIntExtra("Demo", -1));
-
-            link.setMovementMethod(LinkMovementMethod.getInstance());*/
 
         }
+    }
+    public void noFeedback(){
+
     }
 }
