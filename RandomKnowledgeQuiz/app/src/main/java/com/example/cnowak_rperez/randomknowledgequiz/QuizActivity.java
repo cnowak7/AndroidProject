@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.AsyncTask;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,6 +32,7 @@ public class QuizActivity extends Activity {
     private int status = 0;
     private ProgressBar progressBar;
     private Handler mHandler;
+    private CountDownTimer timer;
 
     private Quiz quiz;
     private Question question;
@@ -91,8 +93,13 @@ public class QuizActivity extends Activity {
                         done.setVisibility(View.INVISIBLE);
 
                     }
+                    c1.setClickable(false);
+                    c2.setClickable(false);
+                    c3.setClickable(false);
+                    c4.setClickable(false);
                 }
                 else if(btnValue.equals("Next")){
+                    timer.start();
                     count++;
                     //Set up next question
                     question = quiz.getQuestion(count);
@@ -101,6 +108,10 @@ public class QuizActivity extends Activity {
                     answer = question.getAnswer();
                     next.setVisibility(View.INVISIBLE);
                     done.setVisibility(View.INVISIBLE);
+                    c1.setClickable(true);
+                    c2.setClickable(true);
+                    c3.setClickable(true);
+                    c4.setClickable(true);
                     c1.setText(array[0]);
                     c2.setText(array[1]);
                     c3.setText(array[2]);
@@ -136,6 +147,10 @@ public class QuizActivity extends Activity {
                         next.setVisibility(View.VISIBLE);
                         done.setVisibility(View.INVISIBLE);
                     }
+                    c1.setClickable(false);
+                    c2.setClickable(false);
+                    c3.setClickable(false);
+                    c4.setClickable(false);
                 }
             }
         };
@@ -149,6 +164,44 @@ public class QuizActivity extends Activity {
 
         done.setOnClickListener(listener);
         next.setOnClickListener(listener);
+
+        timer = new CountDownTimer(31000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                timeTxt.setText( millisUntilFinished / 1000 + "s");
+            }
+
+            public void onFinish() {
+                Button[] buttons = {c1, c2, c3, c4};
+                int counter = 0;
+                while(counter < buttons.length){
+                    Button currentButton = buttons[counter];
+                    if(currentButton.getText().equals(answer)){
+                        //currentButton.setBackgroundColor(Color.parseColor("#01DF01"));
+                        currentButton.getBackground().setColorFilter(Color.parseColor("#01DF01"), PorterDuff.Mode.DARKEN);
+                    }
+                    counter++;
+                }
+                Toast.makeText(QuizActivity.this, "TIMED OUT!", Toast.LENGTH_SHORT).show();
+                c1.setClickable(false);
+                c2.setClickable(false);
+                c3.setClickable(false);
+                c4.setClickable(false);
+                timeTxt.setText("0s");
+                if(count == 9){
+                    next.setVisibility(View.INVISIBLE);
+                    done.setVisibility(View.VISIBLE);
+                }
+                else{
+                    next.setVisibility(View.VISIBLE);
+                    done.setVisibility(View.INVISIBLE);
+                }
+
+
+            }
+
+
+        }.start();
 
         Log.d(TAG, "OnCreate");
     }
