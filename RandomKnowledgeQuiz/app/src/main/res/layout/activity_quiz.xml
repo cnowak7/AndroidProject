@@ -30,7 +30,7 @@
             android:progress="50"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            />
+            android:progressDrawable="@drawable/progressbar" />
         <TextView
             android:id="@+id/processTxt"
             android:layout_width="wrap_content"
