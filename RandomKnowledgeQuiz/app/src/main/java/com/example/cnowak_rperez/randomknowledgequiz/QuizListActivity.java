@@ -82,18 +82,22 @@ public class QuizListActivity extends ListActivity {
             new Question("What continent has the fewest flowing plants?", "Antarctica", "Australia","Asia","Antarctica", "Europe",1, Question.Category.Geography),
             new Question("The South Shetland Islands, which are claimed by the United Kingdom, Chile, and Argentina, are off the coast of which continent?", "Antarctica", "North America","Antarctica","Asia", "Europe", 2, Question.Category.Geography),
             new Question("Many klongs, or canals, in the most populous city on the Indochina Peninsula have been filled in and replaced by streets. Name this city?", "Bangkok", "Bangkok", "Singapore", "Kolkata", "Hanoi", 3, Question.Category.Geography),
-            new Question("During World War II, the United States temporarily seized control of the island of Okinawa from which country?", "Japan", "Germany", "Japan", "Russia", "Italy", 3, Question.Category.Geography),
-            new Question("The Great Circle at zero degrees latitude is primarily known by what name?", "Equator", "Tropic of Cancer", "Equator", "Prime Meridian", "Tropic of Capricorn", 4, Question.Category.Geography),
-            new Question("For 250 years Spanish galleons carried on a flourishing trade between Acapulco and a port on an island in East Asia. Name this port, which served as Spain's trade center for East Asia?", "Manila", "Manila", "Palau", "Taipei", "Macau", 5, Question.Category.Geography),
+            new Question("During World War II, the United States temporarily seized control of the island of Okinawa from which country?", "Japan", "Germany", "Japan", "Russia", "Italy", 4, Question.Category.Geography),
+            new Question("The Great Circle at zero degrees latitude is primarily known by what name?", "Equator", "Tropic of Cancer", "Equator", "Prime Meridian", "Tropic of Capricorn", 5, Question.Category.Geography),
+            //new Question("For 250 years Spanish galleons carried on a flourishing trade between Acapulco and a port on an island in East Asia. Name this port, which served as Spain's trade center for East Asia?", "Manila", "Manila", "Palau", "Taipei", "Macau", 6, Question.Category.Geography),
             new Question("Which river is farther north?", "Potomac River", "Rio Grande", "Nile River", "Chattahoochee", "Potomac River", 6, Question.Category.Geography),
             new Question("Silesia, one of Europe's principal coal-producing regions, is mostly in what country?", "Poland", "Poland", "Slovakia", "Austria", "Turkey", 7, Question.Category.Geography),
+<<<<<<< HEAD
 
             new Question("�land, Corsica, and Malta are islands that are part of which continent?", "Europe", "Europe", "Australia", "Antarctica", "Africa", 8, Question.Category.Geography),
 
             new Question("Iceland, Corsica, and Malta are islands that are part of which continent?", "Europe", "Europe", "Australia", "Antarctica", "Africa", 8, Question.Category.Geography),
 
+=======
+            new Question("Iceland, Corsica, and Malta are islands that are part of which continent?", "Europe", "Europe", "Australia", "Antarctica", "Africa", 8, Question.Category.Geography),
+>>>>>>> origin/master
             new Question("A mixture of mud and straw is a popular building material in the southwestern United States. What is this building material called in this region?", "Adobe", "Clay", "Brick", "Adobe", "Cement", 9, Question.Category.Geography),
-            new Question("Gran Paradiso National Park was established to provide protected habitat for ibex, which had been hunted near extinction. This park is south of the Matterhorn in what country?", "Italy", "Switzerland", "Italy", "Austria", "France", 10, Question.Category.Geography),
+            new Question("Gran Paradiso National Park was established to provide protected habitat for ibex. This park is south of the Matterhorn in what country?", "Italy", "Switzerland", "Italy", "Austria", "France", 10, Question.Category.Geography),
 
 
     };
@@ -101,7 +105,7 @@ public class QuizListActivity extends ListActivity {
             new Question("Reticulated means what?", "Diamond Pattern", "Long", "Diamond Pattern", "Tail", "Spotty Pattern", 1, Question.Category.Animals),
             new Question("Which two fish are known as living fossils?", "Arrapaima and Coelacanth", "Mandarinfish and Japanese Angler", "Bitterling and Pond Smelt", "Barracuda and Bicuda", "Arrapaima and Coelacanth", 2, Question.Category.Animals),
             new Question("Where do Pallas Cats come from?", "Nepal and India", "Britain and Australia", "China and Japan", "Nepal and India", "America and Canada", 3, Question.Category.Animals),
-            new Question("Dholes are what?", "Dogs", "Antelopes", "Dogs", "Wolves", "Cats", 3, Question.Category.Animals),
+            //new Question("Dholes are what?", "Dogs", "Antelopes", "Dogs", "Wolves", "Cats", 3, Question.Category.Animals),
             new Question("The largest member of the dolphin family is a what?", "Orca", "Orca", "False Killer Whale", "Risso's dolphin", "Commerson's dolphin", 4, Question.Category.Animals),
             new Question("Which one of these species is endangered?", "All of the species of Rhino", "Black Rhino", "White Rhino", "Short-Horned Rhino", "All of the species of Rhino", 5, Question.Category.Animals),
             new Question("Which of these animals are venomous?", "Komodo Dragon", "Grass Snake", "Horse Leech", "Komodo Dragon", "Cottonmouth Snake", 6, Question.Category.Animals),
@@ -130,7 +134,7 @@ public class QuizListActivity extends ListActivity {
     private static final Question[] QUESTIONS_HISTORY ={
             new Question("From which country did Singapore receive Independence?", "Malaysia", "France", "Malaysia", "Thailand", "United Kingdom", 1, Question.Category.History),
             new Question("What was the name of the Swiss satelite-state that was established in 1798 by the French?", "Helvetian Republic", "Baseler Republic", "Swiss Republic", "Chur Republic", "Helvetian Republic", 2, Question.Category.History),
-            new Question("Many scholars choose May 6, 1527, as an end point for the Renaissance. What event occurred on that date?", "The sack of Rome by soldiers of Charles V", "The sack of Rome by soldiers of Charles V", "The death of Dante Alighieri", "The death of Cesare Borgia", "The fall of the republic of Florence", 3, Question.Category.History),
+            //new Question("Many scholars choose May 6, 1527, as an end point for the Renaissance. What event occurred on that date?", "The sack of Rome by soldiers of Charles V", "The sack of Rome by soldiers of Charles V", "The death of Dante Alighieri", "The death of Cesare Borgia", "The fall of the republic of Florence", 3, Question.Category.History),
             new Question("Which crusade founded the Latin empire in Constantinople?", "The 4th Crusade", "The 2nd Crusade", "The 3rd Crusade", "The 4th Crusade", "The 5th Crusade", 3, Question.Category.History),
             new Question("Which European nation briefly conquered Taiwan in the 17th century?", "The Netherlands", "The Netherlands", "Spain", "Portugal", "Britain", 4, Question.Category.History),
             new Question("Who brought the name Santa Claus with them to the New World?", "Dutch Colonists", "Welsh Colonists", "French Colonists", "Scandinavian Colonists", "Dutch Colonists", 5, Question.Category.History),
@@ -145,7 +149,7 @@ public class QuizListActivity extends ListActivity {
     private static final Question[] QUESTIONS_SPORTS ={
             new Question("Who ended Serena Williams' grand slam dream in 2015?", "Roberta Vinci", "Francesca Schiavone", "Roberta Vinci", "Svetlana Kuznetsova", "Flavia Pennetta", 1, Question.Category.Sports),
             new Question("What city does the NHL team the Sharks belong to?", "San Jose", "Arizona", "Montreal", "San Jose", "Tampa Bay", 2, Question.Category.Sports),
-            new Question("What was the name of the great steeplechaser who won the Cheltenham Gold Cup in 1964, 1965 and 1966?", "", "Desert Orchid", "Aldanati", "Arkle", "Nijinsky", 3, Question.Category.Sports),
+            //new Question("What was the name of the great steeplechaser who won the Cheltenham Gold Cup in 1964, 1965 and 1966?", "", "Desert Orchid", "Aldanati", "Arkle", "Nijinsky", 3, Question.Category.Sports),
             new Question("Which Briton was world motor racing champion in 1976 and retired three years later?", "", "James Hunt", "Graham Hill", "Jackie Stewart", "Bruce McLaren", 3, Question.Category.Sports),
             new Question("Which 6-a-side Olympic sport invented in 1895 by William Morgan was originally called Mintonette'?", "", "Netball", "Croquet", "Volleyball", "Lacrosse", 4, Question.Category.Sports),
             new Question("Which cricketing county has been captained by Mike Atherton?", "", "Yorkshire", "Somerset", "Lancashire", "Worcester", 5, Question.Category.Sports),
