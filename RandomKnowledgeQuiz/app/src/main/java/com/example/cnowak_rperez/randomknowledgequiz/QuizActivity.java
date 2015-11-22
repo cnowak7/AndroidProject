@@ -76,6 +76,8 @@ public class QuizActivity extends Activity {
                 int counter = 0;
                 if(btnValue.equals(answer)){
 
+                    timer.cancel();
+
                     score++;
                     //v.setBackgroundColor(Color.parseColor("#01DF01"));
                     v.getBackground().setColorFilter(Color.parseColor("#01DF01"), PorterDuff.Mode.DARKEN);
@@ -126,6 +128,10 @@ public class QuizActivity extends Activity {
                 }
                 else{
                     //v.setBackgroundColor(Color.parseColor("#DF0101"));
+
+                    timer.cancel();
+
+
                     v.getBackground().setColorFilter(Color.parseColor("#DF0101"), PorterDuff.Mode.DARKEN);
                     while(counter < buttons.length){
                         Button currentButton = buttons[counter];
