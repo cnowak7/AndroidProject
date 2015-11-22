@@ -82,7 +82,6 @@ public class QuizActivity extends Activity {
                 }
                 else{
                     noFeedback(btnValue, v);
-                    Toast.makeText(QuizActivity.this, String.valueOf(timeLimit), Toast.LENGTH_SHORT).show();
                 }
             }
         };
