@@ -15,6 +15,9 @@ import android.widget.TextView;
 
 public class QuizListActivity extends ListActivity {
 
+    private boolean instantFeedbackEnabled;
+    private int timeLimit;
+
     private static final String TAG = "mainActivity";
 
     @Override
@@ -22,6 +25,10 @@ public class QuizListActivity extends ListActivity {
         super.onCreate(savedInstanceState);
 
         setListAdapter(new QuizAdapter());
+        Intent intent = getIntent();
+        instantFeedbackEnabled = intent.getBooleanExtra("instantFeedbackEnabled", false);
+        timeLimit = intent.getIntExtra("timeLimit", 10);
+
     }
 
     @Override
@@ -30,6 +37,8 @@ public class QuizListActivity extends ListActivity {
         intent.putExtra("Name",QUIZZES[position].getName());
         intent.putExtra("Description", QUIZZES[position].getDescription());
         intent.putExtra("Quiz", QUIZZES[position]);
+        intent.putExtra("instantFeedbackEnabled", instantFeedbackEnabled);
+        intent.putExtra("timeLimit", timeLimit);
         //intent.putExtra("Description", QUIZZES[position].getLongDescription());
         //intent.putExtra("Year", HOME_CONSOLES[position].getYear());
         //intent.putExtra("Icon", HomeConsole.getIconResource(HOME_CONSOLES[position].getCompany()));
