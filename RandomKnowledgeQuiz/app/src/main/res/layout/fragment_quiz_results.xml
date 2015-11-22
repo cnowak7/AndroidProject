@@ -33,9 +33,7 @@
         android:textSize="24sp"
         android:gravity="center"
         android:textColor="@color/orange"
-        android:textStyle="bold"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"/>
-
+        android:textStyle="bold"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,5 +43,53 @@
         android:textColor="@color/orange"
         android:textStyle="bold"
         android:layout_marginBottom="@dimen/activity_vertical_margin"/>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/activity_vertical_margin">
+
+        <Button
+            android:id="@+id/backToQuizListButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/home_button"
+            android:text="@string/newQuiz"
+            android:textColor="@color/white"
+            android:textSize="24sp"/>
+
+        <Button
+            android:id="@+id/homeButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/home_button"
+            android:text="@string/home"
+            android:textColor="@color/white"
+            android:textSize="24sp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/facebookShareButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/home_button"
+        android:text="@string/shareScoreOnFacebook"
+        android:textColor="@color/white"
+        android:textSize="24sp"/>
 
 </LinearLayout>
