@@ -87,11 +87,11 @@ public class QuizListActivity extends ListActivity {
             new Question("For 250 years Spanish galleons carried on a flourishing trade between Acapulco and a port on an island in East Asia. Name this port, which served as Spain's trade center for East Asia?", "Manila", "Manila", "Palau", "Taipei", "Macau", 5, Question.Category.Geography),
             new Question("Which river is farther north?", "Potomac River", "Rio Grande", "Nile River", "Chattahoochee", "Potomac River", 6, Question.Category.Geography),
             new Question("Silesia, one of Europe's principal coal-producing regions, is mostly in what country?", "Poland", "Poland", "Slovakia", "Austria", "Turkey", 7, Question.Category.Geography),
-<<<<<<< HEAD
+
             new Question("�land, Corsica, and Malta are islands that are part of which continent?", "Europe", "Europe", "Australia", "Antarctica", "Africa", 8, Question.Category.Geography),
-=======
+
             new Question("Iceland, Corsica, and Malta are islands that are part of which continent?", "Europe", "Europe", "Australia", "Antarctica", "Africa", 8, Question.Category.Geography),
->>>>>>> origin/master
+
             new Question("A mixture of mud and straw is a popular building material in the southwestern United States. What is this building material called in this region?", "Adobe", "Clay", "Brick", "Adobe", "Cement", 9, Question.Category.Geography),
             new Question("Gran Paradiso National Park was established to provide protected habitat for ibex, which had been hunted near extinction. This park is south of the Matterhorn in what country?", "Italy", "Switzerland", "Italy", "Austria", "France", 10, Question.Category.Geography),
 

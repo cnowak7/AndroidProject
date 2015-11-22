@@ -10,6 +10,10 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    private boolean instantFeedbackEnabled = false;
+    private int timeLimit = 10;
+    private static final int req_code = 100;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,24 +28,44 @@ public class MainActivity extends AppCompatActivity {
                 Button tappedButton = (Button)v;
                 switch (tappedButton.getId()) {
                     case R.id.chooseAQuizButton:
-                        Intent intent = new Intent(MainActivity.this, QuizListActivity.class);
-                        startActivity(intent);
+                        Intent quizListIntent = new Intent(MainActivity.this, QuizListActivity.class);
+                        quizListIntent.putExtra("timeLimit", MainActivity.this.timeLimit);
+                        quizListIntent.putExtra("instantFeedbackEnabled", MainActivity.this.instantFeedbackEnabled);
+                        startActivity(quizListIntent);
                         break;
                     case R.id.viewHighScoresButton:
-                        System.out.println("VIEW HIGH SCORES BUTTON TAPPED");
+                        if (MainActivity.this.instantFeedbackEnabled) {
+                            System.out.println("INSTANT FEEDBACK IS ON THO");
+                        }
+                        else {
+                            System.out.println("INSTANT FEEDBACK IN OFF THO");
+                        }
                         break;
                     case R.id.settingsButton:
-                        System.out.println("SETTINGS ");
+                        System.out.println("SETTINGS BUTTON TAPPED");
+                        Intent settingsIntent = new Intent(MainActivity.this, SettingsActivity.class);
+                        startActivityForResult(settingsIntent, req_code);
                         break;
                 }
-
-
             }
         };
         chooseAQuizButton.setOnClickListener(listener);
+        viewHighScoresButton.setOnClickListener(listener);
+        settingsButton.setOnClickListener(listener);
 
 
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == req_code) {
+            if (resultCode == RESULT_OK) {
+                MainActivity.this.timeLimit = data.getIntExtra("newTimeLimit", 10);
+                System.out.println("NEW TIME LIMIT THO: " + Integer.toString(MainActivity.this.timeLimit));
+                System.out.println("INSTANT FEEDBACK ENABLED THO: " + data.getBooleanExtra("instantFeedbackEnabled", false));
+                MainActivity.this.instantFeedbackEnabled = data.getBooleanExtra("instantFeedbackEnabled", false);
+            }
+        }
     }
 
 

@@ -5,6 +5,11 @@
     <string name="facebook_app_id">1654107081541612</string>
     <string name="chooseAQuiz">CHOOSE A QUIZ</string>
     <string name="highScores">VIEW HIGH SCORES</string>
-    <string name="settings">SETTINGS</string>
+    <string name="settings">CHANGE SETTINGS</string>
     <string name="title_activity_settings">SettingsActivity</string>
+    <string name="cancel">CANCEL</string>
+    <string name="save">SAVE</string>
+    <string name="timeLimitLabel">TIME LIMIT (MINUTES)</string>
+    <string name="defaultTimeLimitValue">10</string>
+    <string name="instantFeedback">INSTANT FEEDBACK</string>
 </resources>
