@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
@@ -32,21 +33,25 @@ public class MainActivityFragment extends Fragment {
     private FacebookCallback<LoginResult> mCallback = new FacebookCallback<LoginResult>() {
         @Override
         public void onSuccess(LoginResult loginResult) {
+            System.out.println("FACEBOOK LOGIN SUCCESSFUL THO");
             AccessToken accessToken = loginResult.getAccessToken();
             Profile profile = Profile.getCurrentProfile();
             if (profile != null) {
 //                mTextDetails.setText("Welcome " + profile.getName());
+                Toast.makeText(getActivity(), "Logged into Facebook as: " + profile.getName(), Toast.LENGTH_SHORT).show();
             }
         }
 
         @Override
         public void onCancel() {
-
+            System.out.println("FACEBOOK LOGIN CANCELLED THO");
+            Toast.makeText(getActivity(), "Facebook login cancelled", Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onError(FacebookException e) {
-
+            System.out.println("FACEBOOK LOGIN ERROR THO: " + e.getMessage());
+            Toast.makeText(getActivity(), "Facebook login failed", Toast.LENGTH_SHORT).show();
         }
     };
     public MainActivityFragment() {
@@ -60,13 +65,14 @@ public class MainActivityFragment extends Fragment {
         mTokenTracker = new AccessTokenTracker() {
             @Override
             protected void onCurrentAccessTokenChanged(AccessToken old, AccessToken newToken) {
-
+                System.out.println("FACEBOOK ACCESS TOKEN CHANGED THO");
             }
         };
         mProfileTracker = new ProfileTracker() {
             @Override
             protected void onCurrentProfileChanged(Profile oldProfile, Profile newProfile) {
 //                mTextDetails.setText("Welcome " + newProfile.getName());
+                System.out.println("FACEBOOK PROFILE CHANGED THO");
             }
         };
         mTokenTracker.startTracking();
@@ -99,6 +105,7 @@ public class MainActivityFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        System.out.println("FACEBOOK REQUEST CODE IS: " + Integer.toString(requestCode));
         mCallbackManager.onActivityResult(requestCode, resultCode, data);
     }
 }

@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private int timeLimit = 20;
     //default instant feedback setting is false
     private boolean instantFeedbackEnabled = false;
-    private static final int req_code = 100;
+    static final int req_code = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == req_code) {
             if (resultCode == RESULT_OK) {
                 MainActivity.this.timeLimit = data.getIntExtra("timeLimit", 10);

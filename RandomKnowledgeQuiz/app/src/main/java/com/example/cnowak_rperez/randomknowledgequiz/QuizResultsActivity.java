@@ -1,9 +1,13 @@
 package com.example.cnowak_rperez.randomknowledgequiz;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class QuizResultsActivity extends AppCompatActivity {
 
@@ -11,6 +15,30 @@ public class QuizResultsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_results);
+        final TextView scoreValueLabel = (TextView)findViewById(R.id.scoreValueLabel);
+        final Button backToQuizListButton = (Button)findViewById(R.id.backToQuizListButton);
+        final Button homeButton = (Button)findViewById(R.id.homeButton);
+        Intent intent = getIntent();
+        scoreValueLabel.setText(Integer.toString(intent.getIntExtra("timeLimit", 10)) + "/10");
+        final View.OnClickListener listener = new View.OnClickListener() {
+            public void onClick(View v) {
+                Button tappedButton = (Button)v;
+                switch (tappedButton.getId()) {
+                    case R.id.backToQuizListButton:
+                        Intent backToQuizListIntent = new Intent(QuizResultsActivity.this, QuizListActivity.class);
+                        backToQuizListIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(backToQuizListIntent);
+                        break;
+                    case R.id.homeButton:
+                        Intent backToHomeActivityIntent = new Intent(QuizResultsActivity.this, MainActivity.class);
+                        backToHomeActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(backToHomeActivityIntent);
+                        break;
+                }
+            }
+        };
+        backToQuizListButton.setOnClickListener(listener);
+        homeButton.setOnClickListener(listener);
     }
 
 
