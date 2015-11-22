@@ -152,6 +152,9 @@ public class QuizActivity extends Activity {
                     if(count == 9){
                         //INTENT FOR SCOREBOARD
                         timeTxt.setText("0s");
+                        Intent intent = new Intent(QuizActivity.this, QuizResultsActivity.class);
+                        intent.putExtra("Score", score);
+                        startActivity(intent);
                     }
                     else{
                         timeTxt.setText("0s");
@@ -249,6 +252,9 @@ public class QuizActivity extends Activity {
             score++;
             if(count == 9){
                 //ADD INTENT TO THE SCOREBOARD ACTIVITY
+                Intent intent = new Intent(QuizActivity.this, QuizResultsActivity.class);
+                intent.putExtra("Score", score);
+                startActivity(intent);
             }
             else{
                 timer.start();
@@ -268,6 +274,9 @@ public class QuizActivity extends Activity {
             timer.cancel();
             if(count == 9){
                 //ADD INTENT TO THE SCOREBOARD ACTIVITY
+                Intent intent = new Intent(QuizActivity.this, QuizResultsActivity.class);
+                intent.putExtra("Score", score);
+                startActivity(intent);
             }
             else{
                 timer.start();
@@ -340,9 +349,13 @@ public class QuizActivity extends Activity {
         }
         else if(btnValue.equals("Done")){
             //CREATE INTENT that leads to player score
+            Intent intent = new Intent(QuizActivity.this, QuizResultsActivity.class);
+            intent.putExtra("Score", score);
+            startActivity(intent);
         }
         else{
             //v.setBackgroundColor(Color.parseColor("#DF0101"));
+            //TODO
 
             timer.cancel();
 
