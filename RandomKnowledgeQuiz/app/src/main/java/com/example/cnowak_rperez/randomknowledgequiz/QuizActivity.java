@@ -259,6 +259,35 @@ public class QuizActivity extends Activity {
 
         }
     }
+    @Override
+    public void onBackPressed(){
+        count = 0;
+        nextOrder = 0;
+        score = 0;
+        answer = null;
+        c1 = null;
+        c2 = null;
+        c3 = null;
+        c4 = null;
+        done = null;
+        next = null;
+        questionTxt = null;
+        timeTxt = null;
+        progressTxt = null;
+        status = 0;
+        progressBar = null;
+        mHandler = null;
+        timer.cancel();
+        timer = null;
+        feedback = true;
+
+        quiz = null;
+        question = null;
+
+
+        super.onBackPressed();
+    }
+
     public void noFeedback(){
 
     }

@@ -70,9 +70,6 @@ public class QuizListActivity extends ListActivity {
             description.setText(quiz.getDescription());
             //icon.setImageResource(HomeConsole.getIconResource(console.getCompany()));
 
-
-
-
             return row;
         }
     }
