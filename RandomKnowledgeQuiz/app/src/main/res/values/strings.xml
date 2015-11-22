@@ -9,7 +9,10 @@
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="cancel">CANCEL</string>
     <string name="save">SAVE</string>
-    <string name="timeLimitLabel">TIME LIMIT (MINUTES)</string>
+    <string name="timeLimitLabel">TIME LIMIT PER QUESTION (SECONDS)</string>
     <string name="defaultTimeLimitValue">10</string>
     <string name="instantFeedback">INSTANT FEEDBACK</string>
+    <string name="title_activity_quiz_results">QuizResultsActivity</string>
+    <string name="yourScore">YOUR SCORE:</string>
+    <string name="oneHundredPercent">100%</string>
 </resources>

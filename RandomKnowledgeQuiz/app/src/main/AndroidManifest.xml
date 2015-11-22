@@ -50,6 +50,10 @@
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings" >
         </activity>
+        <activity
+            android:name=".QuizResultsActivity"
+            android:label="@string/title_activity_quiz_results" >
+        </activity>
     </application>
 
 </manifest>

@@ -10,7 +10,9 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    private int timeLimit = 10;
+    //default time limit(seconds) per question is 20
+    private int timeLimit = 20;
+    //default instant feedback setting is false
     private boolean instantFeedbackEnabled = false;
     private static final int req_code = 100;
 

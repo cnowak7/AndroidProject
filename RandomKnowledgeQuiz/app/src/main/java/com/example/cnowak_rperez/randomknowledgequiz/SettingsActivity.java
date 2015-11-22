@@ -29,7 +29,8 @@ public class SettingsActivity extends AppCompatActivity {
 
         //get intent from main activity and set the settings as they should be, rather default or saved
         Intent intent = getIntent();
-        timeLimitSeekBar.setProgress(intent.getIntExtra("timeLimit", 10));
+        //since the default time limit is 20 seconds but the minimum is 10, subtract 10 because the max of the seek bar is 20
+        timeLimitSeekBar.setProgress(intent.getIntExtra("timeLimit", 10) - 10);
         timeLimitValueLabel.setText(Integer.toString(intent.getIntExtra("timeLimit", 10)));
         this.instantFeedbackEnabled = intent.getBooleanExtra("instantFeedbackEnabled", false);
         instantFeedbackSwitch.setChecked(intent.getBooleanExtra("instantFeedbackEnabled", false));
@@ -39,7 +40,8 @@ public class SettingsActivity extends AppCompatActivity {
         timeLimitSeekBar.setOnSeekBarChangeListener(
                 new SeekBar.OnSeekBarChangeListener() {
                     public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                        timeLimitValueLabel.setText(Integer.toString(i));
+                        //since 10 seconds is the minimum time limit, add 10
+                        timeLimitValueLabel.setText(Integer.toString(i+10));
                     }
 
                     public void onStartTrackingTouch(SeekBar seekBar) {
