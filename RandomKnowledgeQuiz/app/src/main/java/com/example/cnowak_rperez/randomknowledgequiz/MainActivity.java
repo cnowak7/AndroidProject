@@ -10,8 +10,8 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    private boolean instantFeedbackEnabled = false;
     private int timeLimit = 10;
+    private boolean instantFeedbackEnabled = false;
     private static final int req_code = 100;
 
     @Override
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button chooseAQuizButton = (Button)findViewById(R.id.chooseAQuizButton);
         Button viewHighScoresButton = (Button)findViewById(R.id.viewHighScoresButton);
-        Button settingsButton = (Button)findViewById(R.id.settingsButton);
+        final Button settingsButton = (Button)findViewById(R.id.settingsButton);
 
         final View.OnClickListener listener = new View.OnClickListener() {
             public void onClick(View v) {
@@ -42,8 +42,9 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     case R.id.settingsButton:
-                        System.out.println("SETTINGS BUTTON TAPPED");
                         Intent settingsIntent = new Intent(MainActivity.this, SettingsActivity.class);
+                        settingsIntent.putExtra("timeLimit", MainActivity.this.timeLimit);
+                        settingsIntent.putExtra("instantFeedbackEnabled", MainActivity.this.instantFeedbackEnabled);
                         startActivityForResult(settingsIntent, req_code);
                         break;
                 }
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == req_code) {
             if (resultCode == RESULT_OK) {
-                MainActivity.this.timeLimit = data.getIntExtra("newTimeLimit", 10);
+                MainActivity.this.timeLimit = data.getIntExtra("timeLimit", 10);
                 System.out.println("NEW TIME LIMIT THO: " + Integer.toString(MainActivity.this.timeLimit));
                 System.out.println("INSTANT FEEDBACK ENABLED THO: " + data.getBooleanExtra("instantFeedbackEnabled", false));
                 MainActivity.this.instantFeedbackEnabled = data.getBooleanExtra("instantFeedbackEnabled", false);

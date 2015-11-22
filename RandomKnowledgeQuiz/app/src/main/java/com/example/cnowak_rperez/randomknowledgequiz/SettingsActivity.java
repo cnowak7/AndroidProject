@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    private boolean instantFeedbackBoolean = false;
+    private boolean instantFeedbackEnabled;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +26,14 @@ public class SettingsActivity extends AppCompatActivity {
         final Switch instantFeedbackSwitch = (Switch)findViewById(R.id.instantFeedbackSwitch);
         final Button cancelButton = (Button)findViewById(R.id.cancelButton);
         final Button saveButton = (Button)findViewById(R.id.saveButton);
+
+        //get intent from main activity and set the settings as they should be, rather default or saved
+        Intent intent = getIntent();
+        timeLimitSeekBar.setProgress(intent.getIntExtra("timeLimit", 10));
+        timeLimitValueLabel.setText(Integer.toString(intent.getIntExtra("timeLimit", 10)));
+        this.instantFeedbackEnabled = intent.getBooleanExtra("instantFeedbackEnabled", false);
+        instantFeedbackSwitch.setChecked(intent.getBooleanExtra("instantFeedbackEnabled", false));
+
 
         //for changing time limit
         timeLimitSeekBar.setOnSeekBarChangeListener(
@@ -45,11 +53,11 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 switch (v.getId()) {
                     case R.id.instantFeedbackSwitch:
-                        if (SettingsActivity.this.instantFeedbackBoolean) {
-                            SettingsActivity.this.instantFeedbackBoolean = false;
+                        if (SettingsActivity.this.instantFeedbackEnabled) {
+                            SettingsActivity.this.instantFeedbackEnabled = false;
                         }
                         else {
-                            SettingsActivity.this.instantFeedbackBoolean = true;
+                            SettingsActivity.this.instantFeedbackEnabled = true;
                         }
                         break;
                     case R.id.cancelButton:
@@ -59,8 +67,8 @@ public class SettingsActivity extends AppCompatActivity {
                     case R.id.saveButton:
                         Intent data = new Intent();
                         //pass new time limit and instant feedback settings to main activity
-                        data.putExtra("newTimeLimit", Integer.parseInt(timeLimitValueLabel.getText().toString()));
-                        data.putExtra("instantFeedbackEnabled", SettingsActivity.this.instantFeedbackBoolean);
+                        data.putExtra("timeLimit", Integer.parseInt(timeLimitValueLabel.getText().toString()));
+                        data.putExtra("instantFeedbackEnabled", SettingsActivity.this.instantFeedbackEnabled);
                         setResult(RESULT_OK, data);
                         finish();
                         break;
