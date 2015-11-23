@@ -119,17 +119,17 @@ public class QuizListActivity extends ListActivity {
 
     };
     private static final Question[] QUESTIONS_MISC ={
-            new Question("", "", "", "", "", "", 1, Question.Category.Misc),
-            new Question("", "", "", "", "", "", 2, Question.Category.Misc),
-            new Question("", "", "", "", "", "", 3, Question.Category.Misc),
-            new Question("", "", "", "", "", "", 3, Question.Category.Misc),
-            new Question("", "", "", "", "", "", 4, Question.Category.Misc),
-            new Question("", "", "", "", "", "", 5, Question.Category.Misc),
-            new Question("", "", "", "", "", "", 6, Question.Category.Misc),
-            new Question("", "", "", "", "", "", 7, Question.Category.Misc),
-            new Question("", "", "", "", "", "", 8, Question.Category.Misc),
-            new Question("", "", "", "", "", "", 9, Question.Category.Misc),
-            new Question("", "", "", "", "", "", 10, Question.Category.Misc),
+            new Question("Which popular spirit can be made from potatoes?", "Vodkas", "Whiskey", "Vodkas", "Beer", "Wine", 1, Question.Category.Misc),
+            new Question("If it is 8am in California, what time is it in Missouri?", "10am", "9am", "10am", "12am", "8am", 2, Question.Category.Misc),
+            new Question("Hellenikon international airport is in which country?", "Greece", "Switzerland", "Germany", "France", "Greece", 3, Question.Category.Misc),
+            new Question("What does D stand for in the Computer Assisted CAD?", "Design", "Development", "Design", "Decoding", "Decimal", 3, Question.Category.Misc),
+            new Question("Which Chinese year follows the year of the sheep?", "Monkey", "Monkey", "Mouse", "Dog", "Tiger", 4, Question.Category.Misc),
+            new Question("Vehicles from which country use the international registration letter C?", "Cuba", "Chile", "China", "Cuba", "Croatia", 5, Question.Category.Misc),
+            new Question("Sam Phillips was owner of which legendary recording studio?", "Sun", "Mars", "Sun", "Moon", "Saturn", 6, Question.Category.Misc),
+            new Question("In which year was CNN founded?", "1980", "1980", "1981", "1982", "1983", 7, Question.Category.Misc),
+            new Question("In which country did General Jaruzelski impose marital law in 1981?", "Poland", "Ukraine", "Poland", "Turkey", "Sweden", 8, Question.Category.Misc),
+            new Question("In which mountains are Camp David?", "Appalachian", "Karakoram", "Himalayas", "Andes", "Appalachian", 9, Question.Category.Misc),
+            new Question("Who was the director of the CIA from 1976-81?", "George Bush", "William Colby", "George Bush", "Stansfield Turner", "Robert Gates", 10, Question.Category.Misc),
 
 
     };
@@ -152,10 +152,10 @@ public class QuizListActivity extends ListActivity {
             new Question("Who ended Serena Williams' grand slam dream in 2015?", "Roberta Vinci", "Francesca Schiavone", "Roberta Vinci", "Svetlana Kuznetsova", "Flavia Pennetta", 1, Question.Category.Sports),
             new Question("What city does the NHL team the Sharks belong to?", "San Jose", "Arizona", "Montreal", "San Jose", "Tampa Bay", 2, Question.Category.Sports),
             //new Question("What was the name of the great steeplechaser who won the Cheltenham Gold Cup in 1964, 1965 and 1966?", "", "Desert Orchid", "Aldanati", "Arkle", "Nijinsky", 3, Question.Category.Sports),
-            new Question("Which Briton was world motor racing champion in 1976 and retired three years later?", "", "James Hunt", "Graham Hill", "Jackie Stewart", "Bruce McLaren", 3, Question.Category.Sports),
-            new Question("Which 6-a-side Olympic sport invented in 1895 by William Morgan was originally called Mintonette'?", "", "Netball", "Croquet", "Volleyball", "Lacrosse", 4, Question.Category.Sports),
-            new Question("Which cricketing county has been captained by Mike Atherton?", "", "Yorkshire", "Somerset", "Lancashire", "Worcester", 5, Question.Category.Sports),
-            new Question("What nationality was 1962 Wimbledon champion Rod Laver?", "", "Canadian", "English", "American", "Australian", 6, Question.Category.Sports),
+            new Question("Which Briton was world motor racing champion in 1976 and retired three years later?", "Jackie Stewart", "James Hunt", "Graham Hill", "Jackie Stewart", "Bruce McLaren", 3, Question.Category.Sports),
+            new Question("Which 6-a-side Olympic sport invented in 1895 by William Morgan was originally called Mintonette'?", "Volleyball", "Netball", "Croquet", "Volleyball", "Lacrosse", 4, Question.Category.Sports),
+            new Question("Which cricketing county has been captained by Mike Atherton?", "Worcester", "Yorkshire", "Somerset", "Lancashire", "Worcester", 5, Question.Category.Sports),
+            new Question("What nationality was 1962 Wimbledon champion Rod Laver?", "Canadian", "Canadian", "English", "American", "Australian", 6, Question.Category.Sports),
             new Question("Who led the major league in homeruns during the 2008 season?", "Alex Rodrigez", "Jim Tome", "Ryan Howard", "Derek Jeter", "Alex Rodrigez", 7, Question.Category.Sports),
             new Question("What team plays in the stadium that Ruth built?", "New York Yankees", "New York Yankees", "New York Mets", "Philadelphia Phillies", "Tampa Bay Rays", 8, Question.Category.Sports),
             new Question("Who won Superbowl XXIV?", "San Francisco 49ers", "Pittsburgh Steelers", "Dallas Cowboys", "New York Giants", "San Francisco 49ers", 9, Question.Category.Sports),
