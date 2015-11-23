@@ -1,6 +1,7 @@
 package com.example.cnowak_rperez.randomknowledgequiz;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -67,6 +68,14 @@ public class SettingsActivity extends AppCompatActivity {
                         finish();
                         break;
                     case R.id.saveButton:
+                        //store saved settings in the app's preferences (Preferences API)
+                        SharedPreferences settings = getSharedPreferences("QuizSettings", 0);
+                        SharedPreferences.Editor editor = settings.edit();
+                        editor.putInt("timeLimit", Integer.parseInt(timeLimitValueLabel.getText().toString()));
+                        editor.putBoolean("instantFeedbackEnabled", SettingsActivity.this.instantFeedbackEnabled);
+                        editor.commit();
+
+                        //send this data back to the Main Activity and go to it
                         Intent data = new Intent();
                         //pass new time limit and instant feedback settings to main activity
                         data.putExtra("timeLimit", Integer.parseInt(timeLimitValueLabel.getText().toString()));

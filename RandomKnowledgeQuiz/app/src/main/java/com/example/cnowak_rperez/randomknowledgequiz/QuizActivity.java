@@ -184,6 +184,13 @@ public class QuizActivity extends Activity {
         Log.d(TAG, "OnCreate");
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        System.out.println("QUIZ ACTIVITY DESTROYED THO");
+    }
+
+
     private class ProgressTask extends AsyncTask<Void, Integer, Void>{
         private void doWork(){
             try{

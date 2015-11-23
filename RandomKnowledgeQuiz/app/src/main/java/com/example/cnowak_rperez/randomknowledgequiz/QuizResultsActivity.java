@@ -32,7 +32,7 @@ public class QuizResultsActivity extends AppCompatActivity {
                         break;
                     case R.id.homeButton:
                         Intent backToHomeActivityIntent = new Intent(QuizResultsActivity.this, MainActivity.class);
-                        backToHomeActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        backToHomeActivityIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(backToHomeActivityIntent);
                         break;
                 }

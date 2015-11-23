@@ -1,6 +1,7 @@
 package com.example.cnowak_rperez.randomknowledgequiz;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,15 +12,20 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     //default time limit(seconds) per question is 20
-    private int timeLimit = 20;
+    private int timeLimit;
     //default instant feedback setting is false
-    private boolean instantFeedbackEnabled = false;
+    private boolean instantFeedbackEnabled;
     static final int req_code = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        System.out.println("MAIN ACTIVITY CREATED");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        SharedPreferences quizSettings = getSharedPreferences("QuizSettings", 0);
+        this.timeLimit = quizSettings.getInt("timeLimit", 20);
+        this.instantFeedbackEnabled = quizSettings.getBoolean("instantFeedbackEnabled", false);
 
         Button chooseAQuizButton = (Button)findViewById(R.id.chooseAQuizButton);
         Button viewHighScoresButton = (Button)findViewById(R.id.viewHighScoresButton);
