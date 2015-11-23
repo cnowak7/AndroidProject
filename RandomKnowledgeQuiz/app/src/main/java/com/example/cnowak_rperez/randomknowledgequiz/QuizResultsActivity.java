@@ -42,6 +42,20 @@ public class QuizResultsActivity extends AppCompatActivity {
         homeButton.setOnClickListener(listener);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SpinningTextView spinningTextView = (SpinningTextView) findViewById(R.id.spinningTextView);
+        spinningTextView.startAnimation();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        SpinningTextView spinningTextView = (SpinningTextView) findViewById(R.id.spinningTextView);
+        spinningTextView.stopAnimation();
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
