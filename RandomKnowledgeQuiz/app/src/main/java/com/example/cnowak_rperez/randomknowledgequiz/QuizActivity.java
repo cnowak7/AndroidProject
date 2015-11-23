@@ -23,10 +23,9 @@ import java.util.logging.Handler;
 public class QuizActivity extends Activity {
 
     private static final String TAG = "QuestionActivity";
-    private static int count = 0;
-    private static int nextOrder = 0;
-    private static int score = 0;
-    private static String answer;
+    private int count = 0;
+    private int score = 0;
+    private String answer;
     private Button c1, c2, c3, c4, done, next;
     private TextView questionTxt, timeTxt, progressTxt;
     private int status = 0;
@@ -230,7 +229,6 @@ public class QuizActivity extends Activity {
     @Override
     public void onBackPressed(){
         count = 0;
-        nextOrder = 0;
         score = 0;
         answer = null;
         c1 = null;
