@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -70,13 +71,14 @@ public class QuizListActivity extends ListActivity {
             }
 
 
-            //ImageView icon = (ImageView) row.findViewById(R.id.imageMain);
+            ImageView icon = (ImageView) row.findViewById(R.id.listImage);
             TextView name = (TextView) row.findViewById(R.id.listName);
             TextView description = (TextView) row.findViewById(R.id.listDesc);
 
             Quiz quiz = QUIZZES[position];
             name.setText(quiz.getName());
             description.setText(quiz.getDescription());
+            icon.setImageResource(quiz.getIconResource(quiz.getCategory()));
             //icon.setImageResource(HomeConsole.getIconResource(console.getCompany()));
 
             return row;
@@ -159,11 +161,11 @@ public class QuizListActivity extends ListActivity {
 
     };
     private static final Quiz[] QUIZZES = {
-            new Quiz("Geography Quiz", "Test your geographical knowledge.",QUESTIONS_GEOGRAPHY),
-            new Quiz("Animal Quiz", "Test your knowledge of the Animal Kingdom.",QUESTIONS_ANIMALS),
-            new Quiz("History Quiz", "Test your knowledge of human history.", QUESTIONS_HISTORY),
-            new Quiz("Sports Quiz", "Test your sports IQ.", QUESTIONS_SPORTS),
-            new Quiz("Random Trivia Quiz", "Random knowledge quiz.", QUESTIONS_MISC)
+            new Quiz("Geography Quiz", Quiz.Category.Geography, "Test your geographical knowledge.",QUESTIONS_GEOGRAPHY),
+            new Quiz("Animal Quiz", Quiz.Category.Animals,"Test your knowledge of the Animal Kingdom.",QUESTIONS_ANIMALS),
+            new Quiz("History Quiz", Quiz.Category.History,"Test your knowledge of human history.", QUESTIONS_HISTORY),
+            new Quiz("Sports Quiz", Quiz.Category.Sports,"Test your sports IQ.", QUESTIONS_SPORTS),
+            new Quiz("Random Trivia Quiz", Quiz.Category.Misc,"Random knowledge quiz.", QUESTIONS_MISC)
 
 
     };

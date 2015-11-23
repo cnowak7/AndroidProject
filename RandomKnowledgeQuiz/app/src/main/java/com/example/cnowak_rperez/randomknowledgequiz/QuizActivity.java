@@ -146,6 +146,7 @@ public class QuizActivity extends Activity {
                     else{
                         next.setVisibility(View.VISIBLE);
                         done.setVisibility(View.INVISIBLE);
+                        progressBar.setProgress(count*10);
                     }
                 }
                 else{
@@ -165,6 +166,7 @@ public class QuizActivity extends Activity {
                         questionTxt.setText(question.getQuestion());
                         String[] array = question.getPossible_answers();
                         answer = question.getAnswer();
+                        progressBar.setProgress(count*10);
                         c1.setText(array[0]);
                         c2.setText(array[1]);
                         c3.setText(array[2]);
@@ -275,6 +277,7 @@ public class QuizActivity extends Activity {
                 c2.setText(array[1]);
                 c3.setText(array[2]);
                 c4.setText(array[3]);
+                progressBar.setProgress(count*10);
             }
         }
         else{
@@ -297,6 +300,8 @@ public class QuizActivity extends Activity {
                 c2.setText(array[1]);
                 c3.setText(array[2]);
                 c4.setText(array[3]);
+                progressBar.setProgress(count*10);
+
             }
         }
     }
@@ -353,6 +358,7 @@ public class QuizActivity extends Activity {
             c2.getBackground().setColorFilter(Color.parseColor("#FFFFFF"), PorterDuff.Mode.DARKEN);
             c3.getBackground().setColorFilter(Color.parseColor("#FFFFFF"), PorterDuff.Mode.DARKEN);
             c4.getBackground().setColorFilter(Color.parseColor("#FFFFFF"), PorterDuff.Mode.DARKEN);
+            progressBar.setProgress(count*10);
         }
         else if(btnValue.equals("Done")){
             //CREATE INTENT that leads to player score
