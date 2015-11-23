@@ -3,6 +3,7 @@ package com.example.cnowak_rperez.randomknowledgequiz;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -27,8 +28,9 @@ public class QuizListActivity extends ListActivity {
 
         setListAdapter(new QuizAdapter());
         Intent intent = getIntent();
-        instantFeedbackEnabled = intent.getBooleanExtra("instantFeedbackEnabled", false);
-        timeLimit = intent.getIntExtra("timeLimit", 10);
+        SharedPreferences quizSettings = getSharedPreferences("QuizSettings", 0);
+        this.timeLimit = quizSettings.getInt("timeLimit", 20);
+        this.instantFeedbackEnabled = quizSettings.getBoolean("instantFeedbackEnabled", false);
 
     }
 
