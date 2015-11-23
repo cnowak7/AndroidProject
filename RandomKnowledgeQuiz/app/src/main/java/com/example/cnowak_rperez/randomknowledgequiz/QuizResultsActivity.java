@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class QuizResultsActivity extends AppCompatActivity {
@@ -19,7 +20,7 @@ public class QuizResultsActivity extends AppCompatActivity {
         final Button backToQuizListButton = (Button)findViewById(R.id.backToQuizListButton);
         final Button homeButton = (Button)findViewById(R.id.homeButton);
         Intent intent = getIntent();
-        scoreValueLabel.setText(Integer.toString(intent.getIntExtra("timeLimit", 10)) + "/10");
+        scoreValueLabel.setText(Integer.toString(intent.getIntExtra("Score", 10)) + "/10");
         final View.OnClickListener listener = new View.OnClickListener() {
             public void onClick(View v) {
                 Button tappedButton = (Button)v;
