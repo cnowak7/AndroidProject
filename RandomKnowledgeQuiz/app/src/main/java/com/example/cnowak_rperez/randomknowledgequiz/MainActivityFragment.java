@@ -88,11 +88,11 @@ public class MainActivityFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        LoginButton loginButton = (LoginButton)view.findViewById(R.id.login_button);
+//        LoginButton loginButton = (LoginButton)view.findViewById(R.id.login_button);
 //        this.mTextDetails = (TextView)view.findViewById(R.id.textDetails);
-        loginButton.setReadPermissions("user_friends");
-        loginButton.setFragment(this);
-        loginButton.registerCallback(mCallbackManager, mCallback);
+//        loginButton.setReadPermissions("user_friends");
+//        loginButton.setFragment(this);
+//        loginButton.registerCallback(mCallbackManager, mCallback);
     }
 
     @Override
