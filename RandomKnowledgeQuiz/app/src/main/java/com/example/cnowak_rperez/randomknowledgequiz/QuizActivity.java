@@ -230,7 +230,6 @@ public class QuizActivity extends Activity {
 
             if(count == 9){
                 //CREATE INTENT that leads to next activity after last question
-                Toast.makeText(QuizActivity.this, String.valueOf(score), Toast.LENGTH_SHORT).show();
                 next.setVisibility(View.INVISIBLE);
                 done.setVisibility(View.VISIBLE);
 
@@ -294,7 +293,6 @@ public class QuizActivity extends Activity {
             }
             if(count == 9){
                 //Set up "Done" buttons
-                Toast.makeText(QuizActivity.this, String.valueOf(score), Toast.LENGTH_SHORT).show();
                 next.setVisibility(View.INVISIBLE);
                 done.setVisibility(View.VISIBLE);
             }
