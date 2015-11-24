@@ -15,7 +15,7 @@ import android.view.View;
 import java.util.Random;
 
 public class SpinningTextView extends View {
-    private int rotation = 0, dr = 10;
+    private int rotation = 0, dr = 5;
     private int width, height;
     private boolean paused;
 
@@ -74,7 +74,7 @@ public class SpinningTextView extends View {
 
         canvas.translate(width/2, height/2);
         canvas.rotate(rotation);
-        canvas.drawText("QUIZ COMPLETED", 0, 0, paint);
+        canvas.drawText("IS YOUR HEAD SPINNING?", 0, 0, paint);
 
         if (!paused) mHandler.postDelayed(update, 15);
     }

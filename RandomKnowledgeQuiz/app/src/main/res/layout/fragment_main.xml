@@ -10,6 +10,16 @@
     android:orientation="vertical"
     android:background="@color/colorPrimary">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:text="@string/randomKnowledgeTrivia"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:textColor="@color/orange"
+        android:textStyle="bold|italic"/>
+
     <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button"
         android:layout_width="wrap_content"

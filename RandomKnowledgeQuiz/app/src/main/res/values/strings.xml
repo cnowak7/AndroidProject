@@ -17,5 +17,14 @@
     <string name="oneHundredPercent">100% COMPLETED</string>
     <string name="newQuiz">NEW QUIZ</string>
     <string name="home">HOME</string>
-    <string name="shareScoreOnFacebook">SHARE SCORE ON FACEBOOK</string>
+    <string name="share">Share</string>
+    <string name="takeScreenshot">TAKE SCREENSHOT</string>
+    <string name="title_activity_high_scores">HighScoresActivity</string>
+    <string name="randomKnowledgeTrivia">RANDOM KNOWLEDGE TRIVIA</string>
+    <string name="highScoresLabel">HIGH SCORES</string>
+    <string name="geographyQuiz">GEOGRAPHY QUIZ</string>
+    <string name="animalQuiz">ANIMAL QUIZ</string>
+    <string name="historyQuiz">HISTORY QUIZ</string>
+    <string name="sportsQuiz">SPORTS QUIZ</string>
+    <string name="randomTriviaQuiz">RANDOM TRIVIA QUIZ</string>
 </resources>

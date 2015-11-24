@@ -5,32 +5,22 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
-import android.os.AsyncTask;
 import android.os.CountDownTimer;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
-import java.util.logging.Handler;
-
 public class QuizActivity extends Activity {
 
-    private static final String TAG = "QuestionActivity";
     private int count = 0;
     private int score = 0;
     private String answer;
     private Button c1, c2, c3, c4, done, next;
     private TextView questionTxt, timeTxt, progressTxt;
-    private int status = 0;
     private ProgressBar progressBar;
-    private Handler mHandler;
     private CountDownTimer timer;
     private boolean instantFeedbackEnabled;
     private int timeLimit;
@@ -42,8 +32,6 @@ public class QuizActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-
         setContentView(R.layout.activity_quiz);
 
 
@@ -54,16 +42,7 @@ public class QuizActivity extends Activity {
         progressBar.setProgress(count);
         progressTxt = (TextView) findViewById(R.id.processTxt);
         progressTxt.setText(String.valueOf(count * 10) + "%");
-        /*
-        new Thread(new Runnable() {
-            public void run() {
-                while(count < 10){
-                   progressBar.setProgress(count * 10);
-                    progressTxt.setText(String.valueOf(count * 10) + "%");
-                }
-            }
-        }).start();
-        */
+
         c1 = (Button) findViewById(R.id.choice1);
         c2 = (Button) findViewById(R.id.choice2);
         c3 = (Button) findViewById(R.id.choice3);
@@ -154,6 +133,7 @@ public class QuizActivity extends Activity {
                         timeTxt.setText("0s");
                         Intent intent = new Intent(QuizActivity.this, QuizResultsActivity.class);
                         intent.putExtra("Score", score);
+                        intent.putExtra("quizType", quiz.getCategory().toString());
                         startActivity(intent);
                     }
                     else{
@@ -181,78 +161,8 @@ public class QuizActivity extends Activity {
 
 
         }.start();
-
-        Log.d(TAG, "OnCreate");
     }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        System.out.println("QUIZ ACTIVITY DESTROYED THO");
-    }
-
-
-    private class ProgressTask extends AsyncTask<Void, Integer, Void>{
-        private void doWork(){
-            try{
-                while(count < 10) {
-                    Thread.currentThread().sleep(100);
-                }
-            }catch(InterruptedException e){
-            }
-        }
-        @Override protected Void doInBackground(Void... params){
-            status = 0;
-            while(status <= 100){
-                doWork();
-                publishProgress(status);
-            }
-            return null;
-        }
-        @Override protected void onProgressUpdate(Integer...progress){
-            progressBar.setProgress(progress[0]);
-            progressTxt.setText(String.valueOf(status) + "%");
-        }
-        @Override protected void onPreExecute(){
-
-        }
-    }
-/*
-    @Override
-    protected void onStart(){
-        Log.d(TAG, "onStart");
-
-        super.onStart();
-
-    }
-  */
-    @Override
-    public void onBackPressed(){
-        count = 0;
-        score = 0;
-        answer = null;
-        c1 = null;
-        c2 = null;
-        c3 = null;
-        c4 = null;
-        done = null;
-        next = null;
-        questionTxt = null;
-        timeTxt = null;
-        progressTxt = null;
-        status = 0;
-        progressBar = null;
-        mHandler = null;
-        timer.cancel();
-        timer = null;
-        //instantFeedbackEnabled = true;
-        //timeLimit = 10;
-        quiz = null;
-        question = null;
-
-
-        super.onBackPressed();
-    }
     public void noFeedback(String btnValue, View v){
         if(btnValue.equals(answer)){
             timer.cancel();
@@ -261,6 +171,7 @@ public class QuizActivity extends Activity {
                 //ADD INTENT TO THE SCOREBOARD ACTIVITY
                 Intent intent = new Intent(QuizActivity.this, QuizResultsActivity.class);
                 intent.putExtra("Score", score);
+                intent.putExtra("quizType", quiz.getCategory().toString());
                 startActivity(intent);
             }
             else{
@@ -284,6 +195,7 @@ public class QuizActivity extends Activity {
                 //ADD INTENT TO THE SCOREBOARD ACTIVITY
                 Intent intent = new Intent(QuizActivity.this, QuizResultsActivity.class);
                 intent.putExtra("Score", score);
+                intent.putExtra("quizType", quiz.getCategory().toString());
                 startActivity(intent);
             }
             else{
@@ -362,11 +274,11 @@ public class QuizActivity extends Activity {
             //CREATE INTENT that leads to player score
             Intent intent = new Intent(QuizActivity.this, QuizResultsActivity.class);
             intent.putExtra("Score", score);
+            intent.putExtra("quizType", quiz.getCategory().toString());
             startActivity(intent);
         }
         else{
             //v.setBackgroundColor(Color.parseColor("#DF0101"));
-            //TODO
 
             timer.cancel();
 

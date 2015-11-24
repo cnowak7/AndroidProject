@@ -20,14 +20,11 @@ public class QuizListActivity extends ListActivity {
     private boolean instantFeedbackEnabled;
     private int timeLimit;
 
-    private static final String TAG = "mainActivity";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setListAdapter(new QuizAdapter());
-        Intent intent = getIntent();
         SharedPreferences quizSettings = getSharedPreferences("QuizSettings", 0);
         this.timeLimit = quizSettings.getInt("timeLimit", 20);
         this.instantFeedbackEnabled = quizSettings.getBoolean("instantFeedbackEnabled", false);
@@ -80,7 +77,7 @@ public class QuizListActivity extends ListActivity {
             Quiz quiz = QUIZZES[position];
             name.setText(quiz.getName());
             description.setText(quiz.getDescription());
-            icon.setImageResource(quiz.getIconResource(quiz.getCategory()));
+            icon.setImageResource(Quiz.getIconResource(quiz.getCategory()));
             //icon.setImageResource(HomeConsole.getIconResource(console.getCompany()));
 
             return row;

@@ -9,8 +9,8 @@ public class Quiz implements Serializable{
     String name;
     String description;
     Question questions[] = new Question[10];
-    enum Category {Animals, Sports, Misc, Images, Geography, History};
-    public Category category;
+    enum Category {Animals, Sports, Misc, Geography, History}
+    private Category category;
 
     //Quiz constructor
     public Quiz(String name, Category category ,String description,Question[] questions){

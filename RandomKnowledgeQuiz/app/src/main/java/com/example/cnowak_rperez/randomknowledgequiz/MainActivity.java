@@ -42,12 +42,8 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(quizListIntent);
                         break;
                     case R.id.viewHighScoresButton:
-                        if (MainActivity.this.instantFeedbackEnabled) {
-                            System.out.println("INSTANT FEEDBACK IS ON THO");
-                        }
-                        else {
-                            System.out.println("INSTANT FEEDBACK IN OFF THO");
-                        }
+                        Intent highScoresIntent = new Intent(MainActivity.this, HighScoresActivity.class);
+                        startActivity(highScoresIntent);
                         break;
                     case R.id.settingsButton:
                         Intent settingsIntent = new Intent(MainActivity.this, SettingsActivity.class);
@@ -61,8 +57,28 @@ public class MainActivity extends AppCompatActivity {
         chooseAQuizButton.setOnClickListener(listener);
         viewHighScoresButton.setOnClickListener(listener);
         settingsButton.setOnClickListener(listener);
+        //set initial high scores via Preferences API
+        setInitialHighScores();
+    }
 
-
+    private void setInitialHighScores() {
+        SharedPreferences settings = getSharedPreferences("QuizSettings", 0);
+        if (settings.getInt("geographyHighScoreValue", 0) == 0) {
+            SharedPreferences.Editor editor = settings.edit();
+            //set high score names
+            editor.putString("geographyHighScoreName", "Rick Grimes");
+            editor.putString("animalHighScoreName", "George Nowak");
+            editor.putString("historyHighScoreName", "Homero Penuelas");
+            editor.putString("sportsHighScoreName", "Rafael Perez");
+            editor.putString("randomTriviaHighScoreName", "Stephen Colbert");
+            //set high score values
+            editor.putInt("geographyHighScoreValue", 5);
+            editor.putInt("animalHighScoreValue", 4);
+            editor.putInt("historyHighScoreValue", 6);
+            editor.putInt("sportsHighScoreValue", 7);
+            editor.putInt("randomTriviaHighScoreValue", 6);
+            editor.commit();
+        }
     }
 
     @Override
